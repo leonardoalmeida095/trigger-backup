@@ -1,4 +1,6 @@
---Cria��o do gatilho "utg_moverImvDel" para backup de dados deletados da tabela "imovel" para "imovelDel"
+
+
+--Criação do gatilho "utg_moverImvDel" para backup de dados deletados da tabela "imovel" para "imovelDel"
 
 CREATE TRIGGER utg_moverImvDel
 	ON imovel AFTER DELETE AS
@@ -15,3 +17,12 @@ CREATE TRIGGER utg_moverImvDel
 GO
 
 
+
+
+
+--Trigger para evitar exclusões de tabelas no banco
+--CREATE TRIGGER utg_evitarExcluirTabela
+--	ON DATABASE FOR DROP_TABLE AS
+--		
+--		PRINT 'Não é permitido excluir tabelas.'
+--		ROLLBACK
